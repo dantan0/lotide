@@ -3,14 +3,15 @@ const reverse = function(args) {
     console.log('Not enough arguments');
     return;
   }
-  inputStrings = args.slice(2);
+  const inputStrings = args.slice(2);
   
   let reversedStrings = '';
 
   for (let string of inputStrings) {
     // construct string by looping backwards
     let reversedString = '';
-    for(let i = string.length - 1; i >= 0; i--) {
+
+    for (let i = string.length - 1; i >= 0; i--) {
       reversedString += string[i];
     }
 
@@ -23,7 +24,7 @@ const reverse = function(args) {
   }
 
   return reversedStrings;
-}
+};
 
-args = process.argv;
+const args = process.argv;
 console.log(reverse(args));
