@@ -5,11 +5,11 @@ const assertEqual = function(actual, expected) {
   if (typeof actual === 'string' && typeof expected === 'string') {
     formatExpected = ' ';
     formatActual = ' ';
-    
+
     let expectedArray = expected.split(' ');
     let actualArray = actual.split(' ');
 
-    console.log(expectedArray, actualArray);
+    // console.log(expectedArray, actualArray);
 
     if (expectedArray.length > 1) {
       for (let expected of expectedArray) {
@@ -31,6 +31,17 @@ const assertEqual = function(actual, expected) {
     formatActual = actual;
   }
 
+  if (typeof actual === 'string') {
+    formatActual = `"${actual}"`;
+  } else {
+    formatActual = `${actual}`;
+  }
+  if (typeof expected === 'string') {
+    formatExpected = `"${expected}"`;
+  } else {
+    formatExpected = `${expected}`;
+  }
+
   if (formatActual === formatExpected) {
     console.log(`✅✅✅ Assertion Passed: ${formatActual} === ${formatExpected}`);
   } else {
@@ -39,7 +50,7 @@ const assertEqual = function(actual, expected) {
 }
 
 // TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual("Lighthouse Labs", 1);
 assertEqual("Lighthouse Labs", "Lighthouse" + " " + "Labs");
 assertEqual(1, 1);
 assertEqual(3, 5);
