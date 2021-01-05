@@ -48,7 +48,7 @@ const assertEqual = function(actual, expected) {
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${formatActual} !== ${formatExpected}`);
   }
-}
+};
 
 const head = function(array) {
   if (array.length === 0) {
@@ -56,7 +56,7 @@ const head = function(array) {
   } else {
     return array[0];
   }
-}
+};
 
 // console.log(head([2,32,5]));
 assertEqual(head([3,5,9]), 3);

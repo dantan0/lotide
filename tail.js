@@ -49,9 +49,14 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", 1);
-assertEqual("Lighthouse Labs", "Lighthouse" + " " + "Labs");
-assertEqual(1, 1);
-assertEqual(3, 5);
-assertEqual(222, 111 + 111);
+const tail = function(array) {
+  if (array.length === 1 || array.length === 0) {
+    return [];
+  }
+  return array.slice(1);
+};
+
+const words = ["Yo Yo", "Lighthouse", "Labs"];
+const newWords = tail(words);
+assertEqual(words.length, 3);
+assertEqual(newWords.length, 2);
