@@ -1,6 +1,6 @@
 const assertEqual = function(actual, expected) {
   let formatExpected = ' ';
-  let formatActual = ' '
+  let formatActual = ' ';
 
   // if (typeof actual === 'string' && typeof expected === 'string') {
   //   formatExpected;
