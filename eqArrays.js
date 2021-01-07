@@ -7,6 +7,7 @@ const assertEqual = function(actual, expected) {
   } else {
     formatActual = `${actual}`;
   }
+  
   if (typeof expected === 'string') {
     formatExpected = `"${expected}"`;
   } else {
