@@ -53,9 +53,8 @@ const eqObjects = function(object1, object2) {
         return false;
       }
     } else {
-      // primitive types
+      // primitive types (types must match)
       if (object2[key] !== value) {
-        console.log(value, object2[key]);
         return false;
       }
     }
@@ -81,7 +80,7 @@ const gg = {a : true, b: false};
 const hh = {b : false, a: true};
 assertEqual(eqObjects(gg, hh), true);
 
-// array test cases
+// // array test cases
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 const cd2 = { c: "1", d: ["2", 3, 4] };
