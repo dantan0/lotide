@@ -1,19 +1,42 @@
-const assertArraysEqual = function(array1, array2) {
+// const assertArraysEqual = function(array1, array2) {
+//   // assuming that arrays are not nested or not containing objects
+//   let isEqual = true;
+//   if (array1.length !== array2.length) {
+//     isEqual = false;
+//   }
+//   for (let i = 0; i < array1.length; i++) {
+//     // comparing by types
+//     if (array1[i] !== array2[i]) {
+//       isEqual = false;
+//     }
+//   }
+//   if (isEqual) {
+//     console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+//   } else {
+//     console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
+//   }
+// };
+
+const eqArrays = function(array1, array2) {
   // assuming that arrays are not nested or not containing objects
-  let isEqual = true;
   if (array1.length !== array2.length) {
-    isEqual = false;
+    return false;
   }
   for (let i = 0; i < array1.length; i++) {
     // comparing by types
     if (array1[i] !== array2[i]) {
-      isEqual = false;
+      return false;
     }
   }
-  if (isEqual) {
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+  return true;
+};
+
+const assertArraysEqual = function(actual, expected) {
+  // assuming that arrays are not nested or not containing objects
+  if (eqArrays(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
