@@ -52,6 +52,11 @@ const eqObjects = function(object1, object2) {
       if (!eqArrays(object2[key], value)) {
         return false;
       }
+    } else if (typeof value === 'object' && typeof object2[key] === 'object') {
+      // if value type if object but not arrays
+      if (!eqObjects(value, object2[key])) {
+        return false;
+      };
     } else {
       // primitive types (types must match)
       if (object2[key] !== value) {
@@ -88,3 +93,13 @@ const cd3 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, dc), true);
 assertEqual(eqObjects(cd, cd2), false);
 assertEqual(eqObjects(cd2, cd3), true);
+
+// object test cases
+const ee = eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
+const ff = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
+const qq = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
+const nn = eqObjects({ g: {q: [2, 5, 8], h: {t: 10}}, y: 3}, { y: 3, g: {h: {t: 10}, q: [2, 5, 8]}});
+assertEqual(ee, true);
+assertEqual(ff, false);
+assertEqual(qq, false);
+assertEqual(nn, true);
