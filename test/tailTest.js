@@ -6,7 +6,15 @@ const tail = require('../tail');
 // assertEqual(tail(["Hell"]), "Lighthouse");
 
 describe("tail", () => {
-  it("returns 'Lighthouse' for ['Hell', 'Disneyland', 'Lighthouse']", () => {
-    assert.strictEqual(tail(['Hell', 'Disneyland', 'Lighthouse']), 'Lighthouse');
+  it("returns ['Disneyland', 'Lighthouse'] for ['Hell', 'Disneyland', 'Lighthouse']", () => {
+    assert.deepEqual(tail(['Hell', 'Disneyland', 'Lighthouse']), ['Disneyland', 'Lighthouse']);
+  });
+
+  it('returns [2,3] for [1,2,3]', () => {
+    assert.deepEqual(tail([1,2,3]), [2,3]);
+  });
+
+  it("returns empty array", () => {
+    assert.deepEqual(tail([]), []);
   });
 });

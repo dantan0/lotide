@@ -21,4 +21,4 @@ describe("head", () => {
   it("returns undefined for an empty array", () => {
     assert.strictEqual(head([]), undefined);
   });
-})
+});
