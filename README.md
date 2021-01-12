@@ -26,9 +26,8 @@ This project was created and published by me as part of my learnings at Lighthou
 
 The following functions are currently implemented:
 
-* `assertEqual(actual, expected)`: compare two values to check if they are equal
-* `assertArraysEqual(actual, expected)`: compare two arrays to check if they are equal
-* `assertObjectsEqual(actual, expected)`: compare two objects to check if they are equal
+* `eqArrays(array1, array2)`: compare two arrays to check if they are equal and return true or false
+* `eqObjects(object1, object2)`: compare two objects to check if they are equal and return true or false
 * `countLetters(str)`: take in a sentence and return a count of each of the letters in that sentence
 * `countOnly(allItems, itemsToCount)`: take in a collection of items and returns a subset of those items
 * `findKeyByValue(obj, check)`: take in an object and a value and return the first key containing the given value if found
