@@ -1,42 +1,5 @@
-const assertEqual = function(actual, expected) {
-  let formatExpected = ' ';
-  let formatActual = ' ';
-
-  if (typeof actual === 'string') {
-    formatActual = `"${actual}"`;
-  } else {
-    formatActual = `${actual}`;
-  }
-  
-  if (typeof expected === 'string') {
-    formatExpected = `"${expected}"`;
-  } else {
-    formatExpected = `${expected}`;
-  }
-
-  if (formatActual === formatExpected) {
-    console.log(`✅✅✅ Assertion Passed: ${formatActual} === ${formatExpected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${formatActual} !== ${formatExpected}`);
-  }
-};
-
-const eqArrays = function(array1, array2) {
-  // assuming that arrays are not nested or not containing objects
-  if (array1 === undefined || array2 === undefined) {
-    return undefined;
-  }
-  if (array1.length !== array2.length) {
-    return false;
-  }
-  for (let i = 0; i < array1.length; i++) {
-    // comparing by types for every element
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
@@ -66,6 +29,8 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 };
+
+module.exports = eqObjects;
 
 // primitive test cases
 const ab = { a: "1", b: "2" };
