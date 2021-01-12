@@ -49,6 +49,8 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-assertObjectsEqual({ a: 'a', b: 'b', c: 'c' }, { c: 'c', a: 'a', b: 'b' });
-assertObjectsEqual({ hi: 123, bye: 456 }, { bye: 456, hi: 123 });
+module.exports = assertObjectsEqual;
+
+// assertObjectsEqual({ a: 'a', b: 'b', c: 'c' }, { c: 'c', a: 'a', b: 'b' });
+// assertObjectsEqual({ hi: 123, bye: 456 }, { bye: 456, hi: 123 });
 

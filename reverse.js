@@ -27,4 +27,7 @@ const reverse = function(args) {
 };
 
 const args = process.argv;
-console.log(reverse(args));
+
+module.exports = reverse;
+
+// console.log(reverse(args));

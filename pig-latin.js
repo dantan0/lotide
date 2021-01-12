@@ -15,4 +15,7 @@ const pigLatin = function(args) {
 };
 
 const args = process.argv;
-console.log(pigLatin(args));
+
+module.exports = pigLatin;
+
+// console.log(pigLatin(args));

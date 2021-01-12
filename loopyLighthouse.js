@@ -12,6 +12,9 @@ const loopyLighthouse = function(range, multiples, words) {
   }
 };
 
+
+module.exports = loopyLighthouse;
+
 // test cases
-loopyLighthouse([15, 90], [2, 5], ["Batty", "Beacon"]);
-loopyLighthouse([10, 40], [3, 5], ["Loopy", "Lighthouses"]);
+// loopyLighthouse([15, 90], [2, 5], ["Batty", "Beacon"]);
+// loopyLighthouse([10, 40], [3, 5], ["Loopy", "Lighthouses"]);

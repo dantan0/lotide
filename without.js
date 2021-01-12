@@ -29,7 +29,9 @@ const without = function(source, itemsToRemove) {
   return result;
 };
 
-const words = ["hello", "world", "lighthouse"];
-console.log(without(words, ["lighthouse"]));
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
-assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]);
+module.exports = without;
+
+// const words = ["hello", "world", "lighthouse"];
+// console.log(without(words, ["lighthouse"]));
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]);

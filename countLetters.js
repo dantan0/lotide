@@ -34,7 +34,9 @@ const countLetters = function(str) {
   return result;
 };
 
-let res = countLetters('lighthouse in the house');
-console.log(res);
-assertEqual(res['l'], 1);
-assertEqual(res['h'], 4);
+module.exports = countLetters;
+
+// let res = countLetters('lighthouse in the house');
+// console.log(res);
+// assertEqual(res['l'], 1);
+// assertEqual(res['h'], 4);
