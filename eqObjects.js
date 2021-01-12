@@ -1,4 +1,3 @@
-const assertEqual = require('./assertEqual');
 const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
@@ -31,40 +30,3 @@ const eqObjects = function(object1, object2) {
 };
 
 module.exports = eqObjects;
-
-// primitive test cases
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true);
-
-const abc = { a: "1", b: "2", c: "3"};
-const cba = { a: 1, b: 2, c: 3};
-const bca = { a: "1", b: "3", c: "3"};
-const acb = { a: "1", b: "2", c: "3"};
-assertEqual(eqObjects(ab, abc), false);
-assertEqual(eqObjects(abc, cba), false);
-assertEqual(eqObjects(abc, bca), false);
-assertEqual(eqObjects(abc, acb), true);
-
-const gg = {a : true, b: false};
-const hh = {b : false, a: true};
-assertEqual(eqObjects(gg, hh), true);
-
-// // array test cases
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
-const cd3 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, dc), true);
-assertEqual(eqObjects(cd, cd2), false);
-assertEqual(eqObjects(cd2, cd3), true);
-
-// object test cases
-const ee = eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
-const ff = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
-const qq = eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
-const nn = eqObjects({ g: {q: [2, 5, 8], h: {t: 10}}, y: 3}, { y: 3, g: {h: {t: 10}, q: [2, 5, 8]}});
-assertEqual(ee, true);
-assertEqual(ff, false);
-assertEqual(qq, false);
-assertEqual(nn, true);
